@@ -65,7 +65,7 @@ Input
   Driver: Windows
   Defocus: Allow
 Boot
-  Fast: true
+  Fast: false
   Debugger: false
   Prefer: NTSC-U
 General
