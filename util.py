@@ -123,7 +123,14 @@ def fullscreenScreenshot():
     return pyautogui.screenshot()
 
 def setDPIScaling(executable):
-    subprocess.run(["REG", "ADD", "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", "/V", os.path.abspath(executable), "/T", "REG_SZ", "/D", "~ HIGHDPIAWARE", "/F"])
+    subprocess.run([
+        "REG", "ADD",
+        r"HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers",
+        "/V", os.path.abspath(executable),
+        "/T", "REG_SZ",
+        "/D", "~ HIGHDPIAWARE",
+        "/F"
+    ])
 
 def compareImage(a, b):
     a = a.convert(mode="L", dither=PIL.Image.NONE)
