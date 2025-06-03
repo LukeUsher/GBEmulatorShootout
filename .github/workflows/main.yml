@@ -52,7 +52,7 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Check emulator startups
         run: |
-          python main.py --emulator Ares --get-startuptime
+          python main.py --get-startuptime
 
       - name: Archive startup time result
         uses: actions/upload-artifact@v4
@@ -62,7 +62,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python main.py --emulator Ares
+          python main.py
           python main.py --dump-tests-json --dump-emulators-json
 
       - name: Deploy pages
